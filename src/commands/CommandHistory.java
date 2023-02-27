@@ -1,11 +1,11 @@
 package commands;
 import model.interfaces.IUndoable;
 
-import java.awt.*;
+//import java.awt.*;
 import java.util.*;
 public class CommandHistory {
-    private static final Stack<IUndoable> undoStack = new Stack<IUndoable>();
-    private static final Stack<IUndoable> redoStack = new Stack<IUndoable>();
+    private static final Stack<IUndoable> undoStack = new Stack<>();
+    private static final Stack<IUndoable> redoStack = new Stack<>();
 
     public static void add(IUndoable cmd) {
         undoStack.push(cmd);

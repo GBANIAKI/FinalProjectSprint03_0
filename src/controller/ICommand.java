@@ -1,5 +1,5 @@
 package controller;
 
 public interface ICommand {
-    public void run();
+     void run();
 }

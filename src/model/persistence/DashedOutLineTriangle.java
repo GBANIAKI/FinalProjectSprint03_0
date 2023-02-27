@@ -1,7 +1,7 @@
 package model.persistence;
 
 import model.Point;
-import model.ShapeColorMap;
+//import model.ShapeColorMap;
 import model.interfaces.IDrawShapeStrategy;
 import model.interfaces.IShape;
 
@@ -18,7 +18,7 @@ public class DashedOutLineTriangle implements IDrawShapeStrategy {
     @Override
     public void drawOutLine(Graphics2D graphics2D, IShape shape) {
         this.drawShapeStrategy.drawOutLine(graphics2D, shape);
-        if(this.isSelectedShape==true) {
+        if(this.isSelectedShape) {
 
             Stroke stroke = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
             graphics2D.setStroke(stroke);
@@ -33,7 +33,7 @@ public class DashedOutLineTriangle implements IDrawShapeStrategy {
     @Override
     public void drawFilledIn(Graphics2D graphics2D, IShape shape) {
         this.drawShapeStrategy. drawFilledIn(graphics2D, shape);
-        if(this.isSelectedShape==true) {
+        if(this.isSelectedShape) {
             Stroke stroke = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
             graphics2D.setStroke(stroke);
             graphics2D.setColor(Color.BLACK);

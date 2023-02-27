@@ -3,21 +3,21 @@ package controller;
 import commands.*;
 
 import model.NullShapeListManager;
-import model.ShapeListManager;
+//import model.ShapeListManager;
 
 import model.Point;
 
 import model.interfaces.IApplicationState;
 import model.interfaces.IShapeListManager;
-import model.persistence.ApplicationState;
+//import model.persistence.ApplicationState;
 import model.persistence.NullApplicationState;
-import view.gui.DrawShapeStrategyFactory;
-import view.gui.DrawTriangleStrategy;
+//import view.gui.DrawShapeStrategyFactory;
+//import view.gui.DrawTriangleStrategy;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import static view.gui.DrawShapeStrategyFactory.*;
+//import static view.gui.DrawShapeStrategyFactory.*;
 
 public class ClickHandler extends MouseAdapter {
 

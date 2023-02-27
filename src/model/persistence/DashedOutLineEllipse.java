@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class DashedOutLineEllipse implements IDrawShapeStrategy {
     IDrawShapeStrategy drawShapeStrategy;
-    private boolean isSelectedShape;
+    private final boolean isSelectedShape;
     public DashedOutLineEllipse(IDrawShapeStrategy drawShapeStrategy,boolean isSelectedShape){
         this.drawShapeStrategy=drawShapeStrategy;
         this.isSelectedShape=isSelectedShape;
@@ -15,7 +15,7 @@ public class DashedOutLineEllipse implements IDrawShapeStrategy {
     @Override
     public void drawOutLine(Graphics2D graphics2D, IShape shape) {
         this.drawShapeStrategy.drawOutLine(graphics2D, shape);
-        if(this.isSelectedShape==true) {
+        if(this.isSelectedShape) {
             int width = shape.getEndPoint().getX() - shape.getStartPoint().getX();
             int height = shape.getEndPoint().getY() - shape.getStartPoint().getY();
             Stroke stroke = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
@@ -29,7 +29,7 @@ public class DashedOutLineEllipse implements IDrawShapeStrategy {
     @Override
     public void drawFilledIn(Graphics2D graphics2D, IShape shape) {
         this.drawShapeStrategy.drawFilledIn(graphics2D, shape);
-        if(this.isSelectedShape==true) {
+        if(this.isSelectedShape) {
             int width = shape.getEndPoint().getX() - shape.getStartPoint().getX();
             int height = shape.getEndPoint().getY() - shape.getStartPoint().getY();
             Stroke stroke = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);

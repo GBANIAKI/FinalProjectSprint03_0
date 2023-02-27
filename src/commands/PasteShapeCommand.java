@@ -1,8 +1,8 @@
 package commands;
 
 import controller.ICommand;
-import model.MasterShapeList;
-import model.Point;
+//import model.MasterShapeList;
+//import model.Point;
 import model.interfaces.*;
 
 import java.util.ArrayList;

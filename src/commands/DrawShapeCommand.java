@@ -3,10 +3,10 @@ package commands;
 import controller.ICommand;
 import model.*;
 import model.interfaces.*;
-import model.persistence.ApplicationState;
+//import model.persistence.ApplicationState;
 import model.persistence.NullApplicationState;
 
-import java.awt.geom.Point2D;
+//import java.awt.geom.Point2D;
 
 public class DrawShapeCommand implements ICommand, IUndoable{
     private final IDrawSubject masterShapeList;

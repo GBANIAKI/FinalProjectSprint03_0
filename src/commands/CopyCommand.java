@@ -1,7 +1,7 @@
 package commands;
 
 import controller.ICommand;
-import model.ShapeListManager;
+//import model.ShapeListManager;
 import model.interfaces.IShape;
 import model.interfaces.IShapeList;
 import model.interfaces.IShapeListManager;
