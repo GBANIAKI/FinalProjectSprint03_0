@@ -3,6 +3,7 @@ package commands;
 import controller.ICommand;
 //import model.MasterShapeList;
 //import model.Point;
+import model.NullShapeListManager;
 import model.interfaces.*;
 
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ public class PasteShapeCommand implements ICommand, IUndoable {
     private final IShapeList clipBoardShapeList;
     private final ArrayList<IShape> pastedShapeList=new ArrayList<>();
     public PasteShapeCommand(IShapeListManager shapeListManager){
+        if(shapeListManager==null)
+            new NullShapeListManager();
         this.masterShapeList=shapeListManager.getMasterShapeList();
         this.clipBoardShapeList=shapeListManager.getClipBoardShapeList();
         //this.pastedShapes= new ArrayList<>();

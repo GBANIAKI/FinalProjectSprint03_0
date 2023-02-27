@@ -24,6 +24,8 @@ public class SelectShapeCommand implements ICommand {
 
     public SelectShapeCommand(IShapeListManager shapeListManager, Point selectionStartPoint,
                               Point selectionEndPoint,boolean isSelectedShape){
+        if(shapeListManager==null)
+            new NullShapeListManager();
         this.masterShapeList = shapeListManager.getMasterShapeList();
         this.selectedShapeList= shapeListManager.getSelectedShapeList();
         this.selectionStartPoint= selectionStartPoint;

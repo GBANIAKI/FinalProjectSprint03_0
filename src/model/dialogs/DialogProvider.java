@@ -6,6 +6,7 @@ import model.ShapeType;
 import model.MouseMode;
 import model.interfaces.IApplicationState;
 import model.interfaces.IDialogProvider;
+import model.persistence.NullApplicationState;
 import view.interfaces.IDialogChoice;
 
 public class DialogProvider implements IDialogProvider{
@@ -17,6 +18,8 @@ public class DialogProvider implements IDialogProvider{
     private final IApplicationState applicationState;
 
     public DialogProvider(IApplicationState applicationState) {
+        if(applicationState==null)
+            new NullApplicationState();
         this.applicationState = applicationState;
         chooseShapeDialog = new ChooseShapeDialog(this.applicationState);
         choosePrimaryColorDialog = new ChoosePrimaryColorDialog(this.applicationState);

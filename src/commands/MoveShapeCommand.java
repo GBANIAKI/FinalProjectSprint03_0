@@ -2,6 +2,7 @@ package commands;
 
 import controller.ICommand;
 //import model.MasterShapeList;
+import model.NullShapeListManager;
 import model.Point;
 //import model.ShapeListManager;
 import model.interfaces.*;
@@ -15,6 +16,8 @@ public class MoveShapeCommand implements ICommand, IUndoable {
     private final int differenceX;
     private final int differenceY;
     public MoveShapeCommand(IShapeListManager shapeListManager, Point moveStartPoint, Point moveEndPoint){
+        if(shapeListManager==null)
+            new NullShapeListManager();
         this.masterShapeList = shapeListManager.getMasterShapeList();
         this.selectedShapeList = shapeListManager.getSelectedShapeList();
         this.differenceX = moveEndPoint.getX() - moveStartPoint.getX();

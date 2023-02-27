@@ -3,7 +3,8 @@ package commands;
 import controller.ICommand;
 //import model.MasterShapeList;
 //import model.ShapeList;
-//import model.ShapeListManager;
+import model.ShapeListManager;
+import model.NullShapeListManager;
 import model.interfaces.*;
 
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ public class DeleteShapeCommand implements ICommand, IUndoable {
 
 
     public DeleteShapeCommand(IShapeListManager shapeListManager) {
+        if(shapeListManager==null)
+            new NullShapeListManager();
         this.masterShapeList = shapeListManager.getMasterShapeList();
         this.selectedShapeList= shapeListManager.getSelectedShapeList();
     }
