@@ -8,6 +8,7 @@ public interface IDrawSubject {
     public void notifyObserver();
 
     ArrayList<IShape> getShapeList();
+    ArrayList<IDrawObserver>getObservers();
 
     void add(IShape shape);
 

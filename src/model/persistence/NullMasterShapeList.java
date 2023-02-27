@@ -41,4 +41,7 @@ public class NullMasterShapeList implements IDrawSubject {
     public void shapeModified() {
 
     }
+    public ArrayList<IDrawObserver> getObservers(){
+        return null;
+    }
 }

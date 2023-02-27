@@ -20,7 +20,6 @@ public class DrawTriangleStrategy implements IDrawShapeStrategy {
         graphics2D.drawPolygon(getXPoints(shape.
                 getStartPoint(),shape.getEndPoint()),getYPoints(shape.
                 getStartPoint(),shape.getEndPoint()),3);
-        //this.drawShapeStrategy.drawOutLine(graphics2D, shape);
 
     }
 
@@ -38,9 +37,7 @@ public class DrawTriangleStrategy implements IDrawShapeStrategy {
         int[] xPoints= new int[3];
         xPoints[0] = startPoint.getX();
         xPoints[1] = startPoint.getX();
-       // xPoints[1] = endPoint.getX();
 
-        //xPoints[2]=startPoint.getX();
         xPoints[2]=endPoint.getX();
         return xPoints;
 

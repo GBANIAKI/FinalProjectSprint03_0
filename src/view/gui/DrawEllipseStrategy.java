@@ -7,7 +7,7 @@ import model.interfaces.IShape;
 import java.awt.*;
 
 public class DrawEllipseStrategy implements IDrawShapeStrategy {
-    DrawEllipseStrategy(){
+    public DrawEllipseStrategy(){
     }
     @Override
     public void drawOutLine(Graphics2D graphics2D, IShape shape) {

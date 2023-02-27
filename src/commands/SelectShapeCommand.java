@@ -1,10 +1,8 @@
 package commands;
 
 import controller.ICommand;
-import model.CollisionDetector;
-import model.MasterShapeList;
+import model.*;
 import model.Point;
-import model.ShapeListManager;
 import model.interfaces.*;
 import view.gui.DrawShapeStrategyFactory;
 import view.gui.*;
@@ -13,6 +11,7 @@ import java.awt.Graphics2D;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 import static view.gui.DrawShapeStrategyFactory.*;
 
@@ -22,6 +21,7 @@ public class SelectShapeCommand implements ICommand {
     private final Point selectionStartPoint;
     private final Point selectionEndPoint;
     private final boolean isSelectedShape;
+
     public SelectShapeCommand(IShapeListManager shapeListManager, Point selectionStartPoint,
                               Point selectionEndPoint,boolean isSelectedShape){
         this.masterShapeList = shapeListManager.getMasterShapeList();
@@ -34,29 +34,25 @@ public class SelectShapeCommand implements ICommand {
 
     @Override
     public void run() {
-        for(IShape shape: masterShapeList.getShapeList()){
+       IShape selectedShape=null;
+        for(IShape shape: this.masterShapeList.getShapeList()){
             if(CollisionDetector.detectCollision(shape, selectionStartPoint, selectionEndPoint)){
                 selectedShapeList.add(shape);
                 setIsSelectedShape(this.isSelectedShape);
-               /*DrawShapeStrategy drawerShapeStrategy;
-
-                switch(shape.getShapeConfiguration().getActiveShapeType()){
-                    case RECTANGLE:
-                        drawerShapeStrategy= createDrawRectangleStrategy();
-                        break;
-                    case ELLIPSE:
-                        drawerShapeStrategy= createDrawEllipseStrategy();
-                        break;
-                    case TRIANGLE:
-                        drawerShapeStrategy= createDrawTriangleStrategy();
-                        break;
-                    default:
-                        throw new Error("error");
-                }*/
+                selectedShape=shape;
 
             }
 
         }
+        for(IDrawObserver observer: this.masterShapeList.getObservers()){
+            System.out.println(observer);
+            observer.update(this.selectedShapeList.getShapeList());
+            //observer.setDrawShapeStrategyFactory(selectedShape);
+            setIsSelectedShape(false);
+           //observer.update();
+            //observer =null;
+        }
+        //setIsSelectedShape(false);
 
         System.out.println(selectedShapeList);
     }

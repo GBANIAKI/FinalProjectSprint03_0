@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class PaintCanvas extends JComponent{
     ShapeDrawer shapeDrawer;
-   // ArrayList<IShape> observers;
+
    public final ShapeListManager shapeListManager;
 
     public PaintCanvas(ShapeListManager shapeListManager){

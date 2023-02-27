@@ -56,8 +56,7 @@ public class ClickHandler extends MouseAdapter {
 
             case SELECT:
                 shapeListManager.getSelectedShapeList().getShapeList().clear();
-                //boolean isSelectedShape;
-                //  isSelectedShape = true;
+
                 command= new SelectShapeCommand(shapeListManager,topLeft,bottomRight, true);
                 break;
             case MOVE:
