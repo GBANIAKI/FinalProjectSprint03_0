@@ -14,4 +14,5 @@ public interface IShape {
     public void setEndPoint(Point newPoint);
     public void draw(Graphics2D graphics2D, IDrawShapeStrategy drawerShapeStrategy);
     public IShape deepCopy();
+
 }

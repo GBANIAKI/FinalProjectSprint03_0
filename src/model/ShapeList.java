@@ -1,8 +1,11 @@
 package model;
 
+import model.interfaces.IDrawShapeStrategy;
 import model.interfaces.IShape;
+import model.interfaces.IShapeConfiguration;
 import model.interfaces.IShapeList;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class ShapeList implements IShapeList {
@@ -25,5 +28,6 @@ public class ShapeList implements IShapeList {
     public ArrayList<IShape> getShapeList() {
         return this.shapeList;
     }
+
 
 }

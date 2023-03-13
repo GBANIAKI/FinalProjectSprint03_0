@@ -19,10 +19,13 @@ public class PaintCanvas extends JComponent{
     public void paint(Graphics g) {
         Graphics2D graphics2d = (Graphics2D)g;
         super.paint(graphics2d);
-        this.shapeDrawer.update(this.shapeListManager.getMasterShapeList().getShapeList());
-
+        this.shapeDrawer.update(this.shapeListManager.getMasterShapeList().getShapeList(),false);
+        this.shapeDrawer.update(this.shapeListManager.getSelectedShapeList().getShapeList(),true);
 
     }
+ public ShapeDrawer getShapeDrawer(){
+        return this.shapeDrawer;
 
+    }
 
 }

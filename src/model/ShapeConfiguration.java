@@ -3,12 +3,15 @@ package model;
 
 import model.interfaces.IShapeConfiguration;
 
-public class ShapeConfiguration implements IShapeConfiguration {
+import java.util.List;
+
+public class  ShapeConfiguration implements IShapeConfiguration {
     private final ShapeType activeShapeType;
     private final ShapeColor activePrimaryColor;
     private final ShapeColor activeSecondaryColor;
     private final ShapeShadingType activeShadingType;
     private final MouseMode activeStartAndEndPointMode;
+
     public ShapeConfiguration(
             ShapeType activeShapeType,
     ShapeColor activePrimaryColor,
@@ -20,6 +23,7 @@ public class ShapeConfiguration implements IShapeConfiguration {
         this.activeSecondaryColor= activeSecondaryColor;
         this.activeShadingType=activeShadingType;
         this.activeStartAndEndPointMode= activeStartAndEndPointMode;
+
 
     }
     public ShapeType getActiveShapeType(){
@@ -38,6 +42,9 @@ public class ShapeConfiguration implements IShapeConfiguration {
     public  MouseMode getActiveMouseMode(){
         return activeStartAndEndPointMode;
     }
+
+
+
     public ShapeConfiguration deepCopy( ){
         return new ShapeConfiguration(this.activeShapeType,
                 this.activePrimaryColor,

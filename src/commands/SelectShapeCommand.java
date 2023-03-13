@@ -48,7 +48,7 @@ public class SelectShapeCommand implements ICommand {
         }
         for(IDrawObserver observer: this.masterShapeList.getObservers()){
             System.out.println(observer);
-            observer.update(this.selectedShapeList.getShapeList());
+            observer.update(this.selectedShapeList.getShapeList(),true);
             //observer.setDrawShapeStrategyFactory(selectedShape);
             setIsSelectedShape(false);
            //observer.update();

@@ -4,6 +4,7 @@ import model.*;
 import model.dialogs.DialogProvider;
 import model.interfaces.IApplicationState;
 import model.interfaces.IDialogProvider;
+import model.interfaces.IShapeConfiguration;
 import view.interfaces.IUiModule;
 public class  ApplicationState implements IApplicationState{
     private final IUiModule uiModule;

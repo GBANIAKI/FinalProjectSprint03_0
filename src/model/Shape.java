@@ -69,4 +69,6 @@ public  class Shape implements IShape {
         return new Shape(new Point(this.startPoint.getX()+40, this.startPoint.getY()+40),
                 new Point(this.endPoint.getX()+40, this.endPoint.getY()+40), this.shapeConfiguration);
     }
+
+   
 }

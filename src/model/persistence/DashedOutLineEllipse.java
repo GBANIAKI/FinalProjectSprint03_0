@@ -35,7 +35,7 @@ public class DashedOutLineEllipse implements IDrawShapeStrategy {
             Stroke stroke = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
             graphics2D.setStroke(stroke);
             graphics2D.setColor(Color.BLACK);
-            graphics2D.fillOval(shape.getStartPoint().getX() - 5, shape.getStartPoint().getY() - 5, width + 10, height + 10);
+            graphics2D.drawOval(shape.getStartPoint().getX() - 5, shape.getStartPoint().getY() - 5, width + 10, height + 10);
             this.drawShapeStrategy.drawFilledIn(graphics2D, shape);
         }
 

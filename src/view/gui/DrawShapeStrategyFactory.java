@@ -8,17 +8,17 @@ import model.persistence.DashedOutLineTriangle;
 public class DrawShapeStrategyFactory {
     private static boolean isSelectedShape=false;
 
-    public static IDrawShapeStrategy createDrawRectangleStrategy(){
+    public static IDrawShapeStrategy createDrawRectangleStrategy(boolean isSelectedShape){
 
         return new DashedOutLineRectangle(new DrawRectangleStrategy(),isSelectedShape);
 
     }
-    public static IDrawShapeStrategy createDrawEllipseStrategy(){
+    public static IDrawShapeStrategy createDrawEllipseStrategy(boolean isSelectedShape){
 
             return new DashedOutLineEllipse(new DrawEllipseStrategy(),isSelectedShape);
 
     }
-    public static IDrawShapeStrategy createDrawTriangleStrategy(){
+    public static IDrawShapeStrategy createDrawTriangleStrategy(boolean isSelectedShape){
 
 
             return new DashedOutLineTriangle(new DrawTriangleStrategy(), isSelectedShape);

@@ -16,20 +16,24 @@ public class ShapeDrawer implements IDrawObserver {
  }
 
 
-    public void    update(ArrayList<IShape> shapeList) {
+    public void    update(ArrayList<IShape> shapeList, boolean isSelectedShape) {
 
      System.out.println(shapeList);
      for(IShape shape:  shapeList){
+         if(shape.getShapeConfiguration()==null) {
+             shape.draw((Graphics2D) paintCanvas.getGraphics(), null);
+             break;
+         }
          IDrawShapeStrategy drawerShapeStrategy;
          switch(shape.getShapeConfiguration().getActiveShapeType()){
              case RECTANGLE:
-                 drawerShapeStrategy=DrawShapeStrategyFactory.createDrawRectangleStrategy();
+                 drawerShapeStrategy=DrawShapeStrategyFactory.createDrawRectangleStrategy(isSelectedShape);
                  break;
              case ELLIPSE:
-                 drawerShapeStrategy=DrawShapeStrategyFactory.createDrawEllipseStrategy();
+                 drawerShapeStrategy=DrawShapeStrategyFactory.createDrawEllipseStrategy(isSelectedShape);
                  break;
              case TRIANGLE:
-                 drawerShapeStrategy=DrawShapeStrategyFactory.createDrawTriangleStrategy();
+                 drawerShapeStrategy=DrawShapeStrategyFactory.createDrawTriangleStrategy(isSelectedShape);
                  break;
                default:
                  throw new Error("error");
@@ -43,22 +47,22 @@ public void update(){
 }
 
 
-public void setDrawShapeStrategyFactory(IShape shape) {
+/*public void setDrawShapeStrategyFactory(IShape shape) {
     IDrawShapeStrategy drawerShapeStrategy;
     switch (shape.getShapeConfiguration().getActiveShapeType()) {
         case RECTANGLE:
-            drawerShapeStrategy = DrawShapeStrategyFactory.createDrawRectangleStrategy();
+            drawerShapeStrategy = DrawShapeStrategyFactory.createDrawRectangleStrategy(shape.getIsSelectedShape());
             break;
         case ELLIPSE:
-            drawerShapeStrategy = DrawShapeStrategyFactory.createDrawEllipseStrategy();
+            drawerShapeStrategy = DrawShapeStrategyFactory.createDrawEllipseStrategy(shape.getIsSelectedShape());
             break;
         case TRIANGLE:
-            drawerShapeStrategy = DrawShapeStrategyFactory.createDrawTriangleStrategy();
+            drawerShapeStrategy = DrawShapeStrategyFactory.createDrawTriangleStrategy(shape.getIsSelectedShape());
             break;
         default:
             throw new Error("error");
     }
     shape.draw((Graphics2D) paintCanvas.getGraphics(), drawerShapeStrategy);
 
-}
+}*/
 }

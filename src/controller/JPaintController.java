@@ -1,11 +1,7 @@
 package controller;
+import commands.*;
 import model.NullShapeListManager;
 //import model.ShapeListManager;
-import commands.UndoCommand;
-import commands.RedoCommand;
-import commands.CopyCommand;
-import commands.PasteShapeCommand;
-import commands.DeleteShapeCommand;
 //import commands.UngroupCommand;
 //import commands.GoupShapeCommand;
 import model.interfaces.IApplicationState;
@@ -48,7 +44,7 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.COPY, () -> new CopyCommand(this.shapeListManager).run());
        uiModule.addEvent(EventName.PASTE, () ->new PasteShapeCommand(this.shapeListManager).run());
         uiModule.addEvent(EventName.DELETE, () ->new DeleteShapeCommand(this.shapeListManager).run());
-        //uiModule.addEvent(EventName.GROUP, () ->new GoupShapeCommand.run());
+        uiModule.addEvent(EventName.GROUP, () ->new GoupShapeCommand(this.shapeListManager).run());
        // uiModule.addEvent(EventName.UNGROUP, () -> new UngroupCommand.run());
     }
 }
