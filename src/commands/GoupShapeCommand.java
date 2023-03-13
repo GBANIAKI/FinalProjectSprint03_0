@@ -56,16 +56,18 @@ public class GoupShapeCommand implements ICommand, IUndoable {
         CommandHistory.add(this);
        // paintCanvas.repaint();
 
+
     }
 
     @Override
     public void undo() {
-
+        this.shapeListManager.getMasterShapeList().remove(this.LastGroupedShapes);
+        System.out.println(this.shapeListManager.getMasterShapeList());
 
     }
 
     @Override
     public void redo() {
-
+        this.shapeListManager.getMasterShapeList().add(this.LastGroupedShapes);
     }
 }

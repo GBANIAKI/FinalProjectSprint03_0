@@ -22,6 +22,7 @@ public class ShapeDrawer implements IDrawObserver {
      for(IShape shape:  shapeList){
          if(shape.getShapeConfiguration()==null) {
              shape.draw((Graphics2D) paintCanvas.getGraphics(), null);
+
              break;
          }
          IDrawShapeStrategy drawerShapeStrategy;
