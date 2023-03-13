@@ -69,6 +69,9 @@ public class GroupedShapes implements IGroupedShapes {
     public ArrayList<IShape> getChildIShapes(){
         return this.childIShapes;
     }
+    public void setChildIShapes(ArrayList<IShape>childIShapes ){
+        this.childIShapes=childIShapes;
+    }
 
     @Override
     public void draw(Graphics2D graphics2D, IDrawShapeStrategy drawerShapeStrategy) {

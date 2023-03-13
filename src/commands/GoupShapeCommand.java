@@ -12,9 +12,9 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class GoupShapeCommand implements ICommand, IUndoable {
-    private  IGroupedShapes groupedShapes;
+     IGroupedShapes groupedShapes;
     private final IShapeListManager shapeListManager;
-    private IGroupedShapes LastGroupedShapes;
+     IGroupedShapes LastGroupedShapes;
      //private PaintCanvas paintCanvas;
 
     public GoupShapeCommand(IShapeListManager shapeListManager) {
